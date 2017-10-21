@@ -32,6 +32,7 @@ document.getElementById("bun-pack-type").onchange = function() {
 /* Using a switch statement to bundle actions together */
 document.getElementById("bun-pack-type").onchange = function(){
     switch(document.getElementById("bun-pack-type").value) {
+        //Dropdown option: Six Pack of Original Buns
         case "sixpack":
             //image from Tesco: https://img.tesco.com/Groceries/pi/000/0286020000000/IDShot_540x540.jpg
             document.getElementById("mainBun").src="./Assets/sixpackrolls.jpg";
@@ -41,6 +42,7 @@ document.getElementById("bun-pack-type").onchange = function(){
             document.getElementById("second-flavor").style.display='block';
         break;
 
+        //Dropdown option: Single Bun
         case "single":
             document.getElementById("mainBun").src="./Assets/originalbun.jpg";
             document.getElementById("showP").innerHTML = "$1.50 per single bun";
@@ -49,7 +51,7 @@ document.getElementById("bun-pack-type").onchange = function(){
             document.getElementById("second-flavor").style.display='none';
         break;
 
-
+        //Dropdown option: Dozen Original Buns
         case "dozen":
             //image from WalMart: https://i5.walmartimages.com/asr/4ac34003-9e2c-40e9-ad98-c2edc7974d8b_1.7719a321fbd636849bd03dba73969a09.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF
             document.getElementById("mainBun").src="./Assets/dozenpackrolls.jpg";
@@ -59,6 +61,7 @@ document.getElementById("bun-pack-type").onchange = function(){
             document.getElementById("second-flavor").style.display='block';
         break;
 
+        //Dropdown option: Six Pack of Mixed Buns
         case "sixpackmixed":
             //image from Tesco: https://img.tesco.com/Groceries/pi/000/0286020000000/IDShot_540x540.jpg
             document.getElementById("mainBun").src="./Assets/sixpackrollsextra.jpg";
@@ -68,6 +71,7 @@ document.getElementById("bun-pack-type").onchange = function(){
             document.getElementById("second-flavor").style.display='block';
         break;
 
+        //Dropdown option: Dozen of Mixed Buns
         case "dozenmixed":
             //image from WalMart: https://i5.walmartimages.com/asr/4ac34003-9e2c-40e9-ad98-c2edc7974d8b_1.7719a321fbd636849bd03dba73969a09.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF
             document.getElementById("mainBun").src="./Assets/dozenpackrollsmixed.jpg";
@@ -90,7 +94,7 @@ function addCart() {
     document.getElementById("numForCart").innerHTML = numForCart;
 }
 
-
+/* End of doc ready */
 });
 
 

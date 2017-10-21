@@ -10,6 +10,8 @@
 
 <body>
 
+      <!--This is the header, containing an image and the menu links
+        Image courtesy of King Arthur Flour: https://www.kingarthurflour.com/recipes/beautiful-burger-buns-recipe-->
     <header style="background-image:url('./Assets/buns_banner.jpg'); background-position: center; background-size: 100%">
         <img src="./Assets/bunbunlogo.png" alt="Bun Bun Logo" width="600">
         </p>
@@ -17,9 +19,12 @@
         </p>
         <h2>World famous buns, cakes, and many other tasty treats!</h2>
         <nav>
-            <a href="index.html">HOME</a> -
+            <a href="index.html" style="color:black;">HOME</a> -
             <a href="allProdPage.html">SEE OUR BUNS</a> -
-            <a href="about.html">BEHIND THE CHEF</a>
+            <a href="about.html">BEHIND THE CHEF</a> -
+            <!--Cart icon with counter-->
+            <a href="cart.html">SEE YOUR CART   <img src="./Assets/cart.png" width="20" href="cart.html"></a>
+            <a id="numForCart">0</a>
         </nav>
     </header>
 
@@ -36,7 +41,7 @@
     </div>
 
     <div class="flex-container">
-  <div class="flex-item"> Come check us out and eat some of our delicious buns!
+  <div class="flex-item"> <h3>Come check us out and eat some of our delicious buns!</h3>
 </p>
     We are a small, second generation, local bakery serving the greater Pittsburgh area. But we ship all of our products directly to you around the world.
 </p>
@@ -50,12 +55,15 @@
 
 
 
-<div class="footer">
-    <p>Follow us!</p>
-  <a target="_blank" href="https://www.facebook.com"><img src="./Assets/facebookicon.png" width="20"></a>
-  <a target="_blank" href="https://www.twitter.com"><img src="./Assets/twittericon.png" width="20"></a>
-  <a target="_blank" href="https://www.instagram.com"><img src="./Assets/instagramicon.png" width="20"></a>
-</div>
+  <div class="footer">
+    <div class="column side"></div>
+    <div class="column middle">
+    Follow us! &nbsp; &nbsp;
+      <a target="_blank" href="https://www.facebook.com"><img src="./Assets/facebookicon.png" width="20"></a> &nbsp;  &nbsp;
+      <a target="_blank" href="https://www.twitter.com"><img src="./Assets/twittericon.png" width="20"></a> &nbsp;  &nbsp;
+      <a target="_blank" href="https://www.instagram.com"><img src="./Assets/instagramicon.png" width="20"></a>
+    </div>
+  </div>
 
 </body>
 

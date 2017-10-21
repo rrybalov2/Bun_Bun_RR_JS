@@ -54,6 +54,13 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+a:hover{
+    color:black;
+}
+
+a:active{
+    color:black;
+}
 
 /*********** IMAGE GALLERY ************/
 
