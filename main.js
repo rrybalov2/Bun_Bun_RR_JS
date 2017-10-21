@@ -13,6 +13,15 @@ function changeMainPhoto() {
     }
 } */
 
+
+function cartItem(packageType, amount, flavor1, flavor2, price){
+    this.packageType=packageType;
+    this.amount=amount;
+    this.flavor1=flavor1;
+    this.flavor2=flavor2;
+    this.price=price;
+}
+
 /* Starting a JQuery document ready function to make sure the DOM is ready for JS */
 $( document ).ready(function() {
     console.log( "ready!" );
@@ -28,6 +37,9 @@ document.getElementById("bun-pack-type").onchange = function() {
 */
 
 //function
+
+    var dataFromCart = JSON.parse(localStorage.getItem("thingsInCartArray"));
+    console.log(dataFromCart);
 
 /* Using a switch statement to bundle actions together */
 document.getElementById("bun-pack-type").onchange = function(){
@@ -90,8 +102,29 @@ var numForCart = 0;
 document.getElementById("add").addEventListener("click", addCart)
 function addCart() {
     console.log( "function ready!" );
-    numForCart++;
+    numForCart++
+    //+== getElementById("amount-select").value;
     document.getElementById("numForCart").innerHTML = numForCart;
+}
+
+/* */
+document.getElementById("add").addEventListener("click", storeItem)
+function storeItem() {
+    var chosenPackageType = document.getElementById("bun-pack-type");
+    var chosenPackageTypeValue = chosenPackageType.options[chosenPackageType.selectedIndex].value;
+    var chosenAmount = document.getElementById("amount-select");
+    var chosenAmountValue = chosenAmount.options[chosenAmount.selectedIndex].value;
+    var chosenFirstFlavor = document.getElementById("dropdown1");
+    var chosenFirstFlavorValue = chosenFirstFlavor.options[chosenFirstFlavor.selectedIndex].value;
+
+    var userChoice = new cartItem(chosenPackageTypeValue, chosenAmountValue, chosenFirstFlavorValue);
+
+    var thingsInCart = JSON.parse(localStorage.getItem("thingsInCartArray")) || [];
+    thingsInCart.push(userChoice);
+
+    localStorage.setItem("thingsInCartArray", JSON.stringify(thingsInCart));
+    console.log(thingsInCart);
+
 }
 
 /* End of doc ready */

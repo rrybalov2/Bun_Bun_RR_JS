@@ -5,7 +5,7 @@
     <!-- styles -->
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="main.js"></script>
+    <script type="text/javascript" src="cartjs.js"></script>
 
 </head>
 
@@ -21,7 +21,7 @@
               <a href="allProdPage.html">SEE OUR BUNS</a> -
               <a href="about.html">BEHIND THE CHEF</a> -
               <!--Cart icon with counter-->
-              <a href="cart.html" style="color:black;">SEE YOUR CART   <img src="./Assets/cart.png" width="20" href="cart.html"></a>
+              <a href="cart.html" style="color:black;">SEE YOUR CART &nbsp;<img src="./Assets/cart.png" width="20" href="cart.html"></a>
               <a id="numForCart">0</a>
           </nav>
       </header>
@@ -37,78 +37,20 @@
       <div class="column side"></div>
       <!--Middle column that contains the actual content-->
       <div class="column middle">
-          <!--Product image in it's own gallery-->
-          <div class="gallery">
-              <img id="mainBun" src="./Assets/originalbun.jpg" alt="Original Bun" width="600">
-              <div class="desc">
-                  <p></p>
-              </div>
-          </div>
+        <div>
+              <table>
+                <tr>
+                  <th>Product</th>
+                  <th>Package Type</th>
+                  <th>Amount</th>
+                  <th>Price</th>
+                </tr>
+              </table>
+                  <div id="cartTable">
+                  </div>
+        </div>
 
-          <!--Flexbox container holding all of the text-->
-          <div class="flex-container">
-            <div class="flex-item">This is our original, and best-selling, Baked Bun!
-                <p> </p> They are soft and fluffy and made with the perfect levels of umami. You'll want to bring these to every dinner party, cuz there's no stopping FLAVORTOWN!!
 
-            </br>
-            <p>Buy them one at a time, and by the half and full dozen. Up to two more flavors available for the 6 and 12 packs.</p>
-
-            <!--Description that changes per different options-->
-            <p id="showDesc">Get them one at a time!</p>
-
-            <!--Price that changes per different options-->
-            <p id="showP">$1.50 per single bun</p>
-
-        </br>
-
-        <!--Drop down menu to choose bun pack type-->
-        <p>Choose the package type:</p>
-        <select id="bun-pack-type">
-            <option value="single">Single Bun</option>
-            <option value="sixpack">Six Pack of Original Buns</option>
-            <option value="dozen">Dozen Original Buns</option>
-            <option value="sixpackmixed">Six Pack of Mixed Buns</option>
-            <option value="dozenmixed">Dozen of Mixed Buns</option>
-        </select>
-
-        <!--Drop down menu to choose bun pack quantity-->
-        <select id="amount-select">
-          <option disabled selected>How many?</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-      </select>
-
-      <!--Drop down menu to choose first flavor of buns-->
-      <div id="first-flavor" style="display:none">
-          <select>
-              <option disabled selected>Choose a first flavor</option>
-              <option value="original-one">Original</option>
-              <option value="maple-one">Maple</option>
-              <option value="bacon-one">Bacon</option>
-          </select>
-      </div>
-
-      <!--Drop down menu to choose second flavor of buns-->
-      <div id="second-flavor" style="display:none">
-          <select>
-              <option disabled selected>Choose a first flavor</option>
-              <option value="original-two">Original</option>
-              <option value="maple-two">Maple</option>
-              <option value="bacon-two">Bacon</option>
-          </select>
-      </div>
-
-      <p></p>
-
-      <button id="add">Add to Cart</button>
 
   </div>
   </div>

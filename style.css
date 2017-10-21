@@ -109,6 +109,22 @@ div.desc {
     clear: both;
 }
 
+/* Table style */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
 /**** FOOTER *****/
 .footer {
     text-align: center;
