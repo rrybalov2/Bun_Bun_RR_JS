@@ -10,6 +10,9 @@ function cartItem(packageType, amount, flavor1, flavor2, price){
 $( document ).ready(function() {
     console.log( "ready!" );
 
+    var numForCart = 0;
+    document.getElementById("numForCart").innerHTML = JSON.parse(localStorage.getItem("numForCart"));
+
     var dataFromCart = JSON.parse(localStorage.getItem("thingsInCartArray"));
     console.log(dataFromCart);
 
@@ -20,24 +23,25 @@ $( document ).ready(function() {
     }
 
     for (var i = 0; i < arrayLength; i++) {
-        $("#cartTable").append('<div id=item' + [i] +'></div>');
-
-        if (dataFromCart[i].flavor1 == null) {
-            dataFromCart[i].flavor1 = " "
-        }
-        if (dataFromCart[i].flavor2 == null) {
-            dataFromCart[i].flavor2 = " "
-        }
-
-        $("#item" + [i]).append(dataFromCart[i].amount + "  servings" + "  of  " + dataFromCart[i].packageType + "  " + dataFromCart[i].flavor1 + dataFromCart[i].flavor2 + dataFromCart[i].price);
+        $("#cartTable").append('<tr id=item' + [i] +'></tr>');
+        $("#item" + [i]).append('<td>' + dataFromCart[i].amount + "  servings" + "  of  " + '</td>' + '<td>' + dataFromCart[i].packageType + '</td>' +
+            '<td>' + dataFromCart[i].flavor1 + '</td>' + '<td>' + dataFromCart[i].flavor2 + '</td>' + '<td>' + " $" + dataFromCart[i].price) + '</td>';
         $("#item" + [i]).append('<button class=removeButton id=' + [i] + '>Remove Item</button>');
         console.log("#item" + [i]);
         }
 
     $('.removeButton').click(function(){
         var itemPosition = $(this).attr('id');
+        var numToRemove = dataFromCart[itemPosition].amount;
+        var currCartNum = JSON.parse(localStorage.getItem("numForCart"));
+        currCartNum = currCartNum - numToRemove;
+        console.log("cart info new: " + currCartNum);
+        localStorage.setItem("numForCart", JSON.stringify(currCartNum));
+        document.getElementById("numForCart").innerHTML = JSON.parse(localStorage.getItem("numForCart"));
+
         $("#item"+itemPosition).remove();
         dataFromCart.splice(itemPosition, 1);
+        localStorage.setItem("thingsInCartArray", JSON.stringify(dataFromCart));
             });
 
 /* End of doc ready */
