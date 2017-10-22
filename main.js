@@ -102,7 +102,8 @@ var numForCart = 0;
 document.getElementById("add").addEventListener("click", addCart)
 function addCart() {
     console.log( "function ready!" );
-    numForCart++
+    numForCart += + document.getElementById("amount-select").value;
+    console.log(numForCart)
     //+== getElementById("amount-select").value;
     document.getElementById("numForCart").innerHTML = numForCart;
 }
@@ -116,8 +117,12 @@ function storeItem() {
     var chosenAmountValue = chosenAmount.options[chosenAmount.selectedIndex].value;
     var chosenFirstFlavor = document.getElementById("dropdown1");
     var chosenFirstFlavorValue = chosenFirstFlavor.options[chosenFirstFlavor.selectedIndex].value;
+    var chosenSecondFlavor = document.getElementById("dropdown2");
+    var chosenSecondFlavorValue = chosenSecondFlavor.options[chosenSecondFlavor.selectedIndex].value;
+    //var chosenPrice = document.getElementById("showP");
+    //var chosenPriceValue = chosenPrice.value[chosenSecondFlavor.selectedIndex].value;
 
-    var userChoice = new cartItem(chosenPackageTypeValue, chosenAmountValue, chosenFirstFlavorValue);
+    var userChoice = new cartItem(chosenPackageTypeValue, chosenAmountValue, chosenFirstFlavorValue, chosenSecondFlavorValue);
 
     var thingsInCart = JSON.parse(localStorage.getItem("thingsInCartArray")) || [];
     thingsInCart.push(userChoice);

@@ -16,19 +16,29 @@ $( document ).ready(function() {
     if (dataFromCart == null) {}
 
     else {
-        var arrayLength = dataFromCart.length
+        var arrayLength = dataFromCart.length;
     }
 
     for (var i = 0; i < arrayLength; i++) {
-        $("#cartTable").append('<div id=item' + [i] +'></div>' + '<button id=button' + [i] +'>REMOVE</button>');
-        $("#item" + [i]).append(dataFromCart[i].packageType + " of " + dataFromCart[i].flavor1);
+        $("#cartTable").append('<div id=item' + [i] +'></div>');
 
-        //document.getElementById("cartTable").ParentNode.append(dataFromCart[i].packageType);
-    }
-
-    document.getElementById("add").addEventListener("click", storeItem)
-        function storeItem() {
+        if (dataFromCart[i].flavor1 == null) {
+            dataFromCart[i].flavor1 = " "
         }
+        if (dataFromCart[i].flavor2 == null) {
+            dataFromCart[i].flavor2 = " "
+        }
+
+        $("#item" + [i]).append(dataFromCart[i].amount + "  servings" + "  of  " + dataFromCart[i].packageType + "  " + dataFromCart[i].flavor1 + dataFromCart[i].flavor2 + dataFromCart[i].price);
+        $("#item" + [i]).append('<button class=removeButton id=' + [i] + '>Remove Item</button>');
+        console.log("#item" + [i]);
+        }
+
+    $('.removeButton').click(function(){
+        var itemPosition = $(this).attr('id');
+        $("#item"+itemPosition).remove();
+        dataFromCart.splice(itemPosition, 1);
+            });
 
 /* End of doc ready */
 });
